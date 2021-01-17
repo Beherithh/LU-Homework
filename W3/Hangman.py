@@ -66,10 +66,3 @@ while True:
                 print(word)
                 print('You win!')
                 break
-
-
-
-
-
-
-
