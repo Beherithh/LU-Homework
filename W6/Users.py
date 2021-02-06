@@ -83,7 +83,7 @@ def add_new_user():
 choice = 0
 while choice != '4':
     print('Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit')
-    choice = int(input('Your input: '))
+    choice = input('Your input: ')
     if choice == '1':
         find()
     elif choice == '2':
