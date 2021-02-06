@@ -81,13 +81,13 @@ def add_new_user():
 
 
 choice = 0
-while choice != 4:
+while choice != '4':
     print('Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit')
     choice = int(input('Your input: '))
-    if choice == 1:
+    if choice == '1':
         find()
-    elif choice == 2:
+    elif choice == '2':
         add_new_user()
-    elif choice == 3:
+    elif choice == '3':
         delete_user()
 print('Game over')
