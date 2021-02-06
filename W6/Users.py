@@ -13,23 +13,11 @@ class User:
                 f"\temail: {self.email}\n \tRegistered at: {self.registered}")
 
 
-users_list = [User("Aleksey", "Alex", "alex@mail")]
+users_list = [User("Aleksey", "Alex", "alex@mail"), User("aa", "a", "a@a")]
 
 
 def delete_user():
-    del_choice = 0
-    while del_choice != '1' and del_choice != '2':
-        print('Enter 1 to delete by e-mail 2 to delete by username')
-        del_choice = input('Your input: ')
-    if del_choice == '1':
-        index = find_by_mail(input('Enter email: '))
-        deleting(index)
-    elif del_choice == '2':
-        index = find_by_username(input('Enter username: '))
-        deleting(index)
-
-
-def deleting(index):
+    index = find()
     if index == -1:
         print("User not found")
     else:
@@ -37,36 +25,28 @@ def deleting(index):
         users_list.pop(index)
 
 
-def find():
-    f_choice = 0
-    while f_choice != '1' and f_choice != '2':
-        print('Enter 1 to search by e-mail 2 to search by username')
-        f_choice = input('Your input: ')
-        if f_choice == '1':
-            index = find_by_mail(input('Enter email: '))
-            printing_user_data(index)
-        elif f_choice == '2':
-            index = find_by_username(input('Enter username: '))
-            printing_user_data(index)
-
-
-def printing_user_data(index):
+def get_info():
+    index = find()
     if index == -1:
         print("User not found")
     else:
         print(users_list[index])
 
 
-def find_by_mail(mail):
-    for i in users_list:
-        if i.email == mail:
-            return users_list.index(i)
-    return -1
+def find():
+    f_choice = 0
+    while f_choice != '1' and f_choice != '2':
+        print('Enter 1 to search by e-mail 2 to search by username')
+        f_choice = input('Your input: ')
+    if f_choice == '1':
+        return find_by_username_or_mail(None, input('Enter email: '))
+    elif f_choice == '2':
+        return find_by_username_or_mail(input('Enter username: '), None)
 
 
-def find_by_username(username):
+def find_by_username_or_mail(username, mail):
     for i in users_list:
-        if i.username == username:
+        if i.username == username or i.email == mail:
             return users_list.index(i)
     return -1
 
@@ -75,19 +55,45 @@ def add_new_user():
     print("Adding new user:")
     name = input("Full name: ")
     username = input("Username: ")
+    if find_by_username_or_mail(username, None) != -1:
+        print(f'This username \'{username}\' already exists in database')
+        return
     email = input("email: ")
+    if find_by_username_or_mail(None, email) != -1:
+        print(f'This email \'{email}\' already exists in the database')
+        return
     users_list.append(User(name, username, email))
+    # users_list.append(User(input("Full name: "), input("Username: "), input("email: "))) # not nice
     print(f"New user \"{username}\" added")
 
 
 choice = 0
 while choice != '4':
     print('Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit')
-    choice = int(input('Your input: '))
+    choice = input('Your input: ')
     if choice == '1':
-        find()
+        get_info()
     elif choice == '2':
         add_new_user()
     elif choice == '3':
         delete_user()
 print('Game over')
+
+
+
+
+
+
+# Old code
+# def find_by_mail(mail):
+#     for i in users_list:
+#         if i.email == mail:
+#             return users_list.index(i)
+#     return -1
+#
+#
+# def find_by_username(username):
+#     for i in users_list:
+#         if i.username == username:
+#             return users_list.index(i)
+#     return -1
