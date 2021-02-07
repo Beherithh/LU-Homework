@@ -13,9 +13,6 @@ class User:
                 f"\temail: {self.email}\n \tRegistered at: {self.registered}")
 
 
-users_list = [User("Aleksey", "Alex", "alex@mail"), User("aa", "a", "a@a")]
-
-
 def delete_user():
     index = find()
     if index == -1:
@@ -67,6 +64,7 @@ def add_new_user():
     print(f"New user \"{username}\" added")
 
 
+users_list = [User("Aleksey", "Alex", "alex@mail"), User("aa", "a", "a@a")]
 choice = 0
 while choice != '4':
     print('Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit')
