@@ -5,7 +5,7 @@ class User:
     def __init__(self, name, username, email):
         self.name = name
         self.username = username
-        self.email = email
+        self.email = email.lower()
         self.registered = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
 
     def __str__(self):
@@ -36,7 +36,7 @@ def find():
         print('Enter 1 to search by e-mail 2 to search by username')
         f_choice = input('Your input: ')
     if f_choice == '1':
-        return find_by_username_or_mail(None, input('Enter email: '))
+        return find_by_username_or_mail(None, input('Enter email: ').lower())
     elif f_choice == '2':
         return find_by_username_or_mail(input('Enter username: '), None)
 
