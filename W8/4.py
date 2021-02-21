@@ -10,4 +10,4 @@ def print_ok():
     print('Ok')
 
 
-print_ok()
+print(help(print_ok))

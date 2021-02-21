@@ -1,7 +1,7 @@
 def generator(start, end):
     for i in range(start, end + 1):
         marker = 0
-        if i == 1 or i == 0:
+        if i < 2:
             pass
         elif i == 2:
             yield 2
