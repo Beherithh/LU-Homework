@@ -11,3 +11,4 @@ def print_ok():
 
 
 print(help(print_ok))
+print(print_ok.__name__)
