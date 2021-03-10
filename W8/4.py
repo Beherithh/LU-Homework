@@ -1,6 +1,6 @@
 def print_function_name(func):
     def the_wrapper():
-        print('Executing print_ok: ')
+        print(f'Executing {func.__name__}')
         func()
     return the_wrapper
 
@@ -10,5 +10,4 @@ def print_ok():
     print('Ok')
 
 
-print(help(print_ok))
-print(print_ok.__name__)
+print_ok()
