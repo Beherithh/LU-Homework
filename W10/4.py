@@ -2,11 +2,11 @@ counter = []
 
 
 def call_counter(func):
+    counter = 0
     def decor():
-        global counter
-        counter.append(func.__name__)
-        count = counter.count(func.__name__)
-        print(f"Function {func.__name__} has been called {count} times")
+        nonlocal counter
+        counter += 1
+        print(f"Function {func.__name__} has been called {counter} times")
         func()
     return decor
 
