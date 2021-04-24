@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+</head>
+<body>
+
+<p>Options:</p>
+<p><a href="http://127.0.0.1:8000/admin">Admin panel</a></p>
+<p><a href="http://127.0.0.1:8000/add_user">Add new user</a></p>
+<form action="" method="post">
+  <hr />
+
+<p><span style="color:#2ecc71"><strong>Users list:</strong></span></p>
+
+  {% if users_list %}
+    <ul>
+      {% for user in users_list %}
+      <hr />
+
+        <li>User ID: {{ user.id }}</li>
+        <li>User Name: {{ user.username }}</li>
+        <li>e-mail: {{ user.usermail }}</li>
+<p>Options:</p>
+<p><a href='http://127.0.0.1:8000/delete_user/{{user.id}}'>Delete user</a></p>
+<p><a href='http://127.0.0.1:8000/edit_user/{{user.id}}'>Edit user</a></p>
+
+
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no registered users.</p>
+  <p><img alt="crying" src="https://tools.otzyvmarketing.ru/js/ckeditor/plugins/smiley/images/cry_smile.png" style="height:23px; width:23px" title="crying" /></p>
+  {% endif %}
+  <hr />
+
+</body>
+</html>
