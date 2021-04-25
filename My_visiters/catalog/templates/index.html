@@ -7,8 +7,8 @@
 <body>
 
 <p>Options:</p>
-<p><a href="http://127.0.0.1:8000/admin">Admin panel</a></p>
-<p><a href="http://127.0.0.1:8000/add_user">Add new user</a></p>
+<p><a href="{% url 'admin:index' %}">Admin panel</a></p>
+<p><a href="{% url 'add_user' %}">Add new user</a></p>
 <form action="" method="post">
   <hr />
 
@@ -23,8 +23,8 @@
         <li>User Name: {{ user.username }}</li>
         <li>e-mail: {{ user.usermail }}</li>
 <p>Options:</p>
-<p><a href='http://127.0.0.1:8000/delete_user/{{user.id}}'>Delete user</a></p>
-<p><a href='http://127.0.0.1:8000/edit_user/{{user.id}}'>Edit user</a></p>
+<p><a href="{% url 'delete_user' user.id %}">Delete user</a></p>
+<p><a href="{% url 'edit_user' user.id %}">Edit user</a></p>
 
 
       {% endfor %}

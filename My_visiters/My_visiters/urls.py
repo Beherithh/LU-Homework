@@ -19,10 +19,10 @@ from catalog import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index),
-    path('add_user/', views.add_user),
-    path('delete_user/<int:user_id>', views.delete_user),
-    path('edit_user/<int:user_id>', views.edit_user),
-    path('get_user/<user_id>', views.get_user),
+    path('admin/', admin.site.urls, name='admin'),
+    path('', views.index, name='home'),
+    path('add_user/', views.add_user, name='add_user'),
+    path('delete_user/<int:user_id>', views.delete_user, name='delete_user'),
+    path('edit_user/<int:user_id>', views.edit_user, name='edit_user'),
+    path('get_user/<user_id>', views.get_user, name='get_user'),
 ]
