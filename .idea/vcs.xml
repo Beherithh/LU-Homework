@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MV_online" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/UserformWithDjango" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/django_visits_2" vcs="Git" />
   </component>
