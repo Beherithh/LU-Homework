@@ -19,16 +19,14 @@
     <ul>
       {% for dep in deps_list %}
       <hr />
-
+<p><a href="{% url 'get_dep' dep.id %}">
         <li>Deposit ID: {{ dep.id }}</li>
         <li>Deposit: {{ dep.deposit }}</li>
         <li>Term: {{ dep.term }}</li>
         <li>Rate: {{ dep.rate }}</li>
         <li>Interest: {{ dep.interest }}</li>
+</a></p>
 
-
-<p>Options:</p>
-<p><a href="{% url 'get_dep' dep.id %}">Deposit's information</a></p>
 
       {% endfor %}
     </ul>
