@@ -4,6 +4,9 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MV_online" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/UserformWithDjango" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/django_userform" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/django_visits" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/django_visits_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lu_2_django" vcs="Git" />
   </component>
 </project>
