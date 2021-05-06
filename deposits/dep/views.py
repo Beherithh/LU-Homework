@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import Deposit
 
 
@@ -24,7 +24,16 @@ def add_dep(request):
         )
         new_dep.save()
 
-        return index()
+        deps_list = Deposit.objects.all()
+        context = {
+            'deps_list': deps_list,
+        }
+
+        return render(
+            template_name='index.html',
+            request=request,
+            context=context,
+        )
 
     return render(
         template_name='new_dep_template.html',

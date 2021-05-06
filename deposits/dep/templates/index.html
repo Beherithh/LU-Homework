@@ -7,13 +7,13 @@
 <body>
 
 <p>Options:</p>
-<p><a href="{% url 'admin:index' %}">Admin panel</a></p>
+<p><a href="{% url 'admin:index' %}">Admin panel (admin/admin)</a></p>
 <p><a href="{% url 'add_dep' %}">Add new deposit</a></p>
 <form action="" method="post">
   <hr />
 
 
-<p><span style="color:#2ecc71"><strong>Users list:</strong></span></p>
+<p><span style="color:#2ecc71"><strong>Deposits list:</strong></span></p>
 
   {% if deps_list %}
     <ul>
@@ -24,11 +24,11 @@
         <li>Deposit: {{ dep.deposit }}</li>
         <li>Term: {{ dep.term }}</li>
         <li>Rate: {{ dep.rate }}</li>
-        <li>Interest: {{ dep.interest() }}</li>
+        <li>Interest: {{ dep.interest }}</li>
 
 
 <p>Options:</p>
-<p><a href="{% url 'edit_dep' user.id %}">Edit deposit</a></p>
+<p><a href="{% url 'get_dep' dep.id %}">Deposit's information</a></p>
 
       {% endfor %}
     </ul>
