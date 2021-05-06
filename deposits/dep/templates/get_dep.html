@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Deposit information:</title>
+</head>
+<body>
+  <p>Deposit information:</p>
+        <li>Deposit ID: {{ dep_id }}</li>
+        <li>Deposit: {{ dep.deposit }}</li>
+        <li>Term: {{ dep.term }}</li>
+        <li>Rate: {{ dep.rate }}</li>
+        <li>Interest: {{ dep.interest() }}</li>
+
+
+<p><a href="{% url 'home' %}">Home</a></p>
+
+</body>
+</html>

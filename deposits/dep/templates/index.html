@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+</head>
+<body>
+
+<p>Options:</p>
+<p><a href="{% url 'admin:index' %}">Admin panel</a></p>
+<p><a href="{% url 'add_dep' %}">Add new deposit</a></p>
+<form action="" method="post">
+  <hr />
+
+
+<p><span style="color:#2ecc71"><strong>Users list:</strong></span></p>
+
+  {% if deps_list %}
+    <ul>
+      {% for dep in deps_list %}
+      <hr />
+
+        <li>Deposit ID: {{ dep.id }}</li>
+        <li>Deposit: {{ dep.deposit }}</li>
+        <li>Term: {{ dep.term }}</li>
+        <li>Rate: {{ dep.rate }}</li>
+        <li>Interest: {{ dep.interest() }}</li>
+
+
+<p>Options:</p>
+<p><a href="{% url 'edit_dep' user.id %}">Edit deposit</a></p>
+
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no registered deposits.</p>
+  <p><img alt="crying" src="https://tools.otzyvmarketing.ru/js/ckeditor/plugins/smiley/images/cry_smile.png" style="height:23px; width:23px" title="crying" /></p>
+  {% endif %}
+  <hr />
+
+</body>
+</html>
